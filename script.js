@@ -5,7 +5,7 @@
 
 // ──── CONFIGURATION ────
 // ⚠️  PASTE YOUR DEPLOYED APPS SCRIPT WEB APP URL HERE:
-const API_URL = 'https://script.google.com/macros/s/AKfycby2RXrQOKkXQ3dgWRz_hCJMl9Fi9ZFxjm_hD6vuwCdh6KHPbRxCXfMsmKeK6JE1LunG-Q/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbxZT9q06UibE-MrJ5lWiYu1SPTcfwC_meqHTiS-y7jzSkqi-h5ebk6bbZqkO-3cZeKk/exec';
 
 // Runtime cache
 let APP_CONFIG = null;       // { minAmount, cycle, rewardValue }
@@ -5606,12 +5606,7 @@ function initiateEditEntry(index) {
 }
 
 function initiateDeleteEntry(index) {
-  const entry = ALL_ENTRIES_CACHE[index];
-  window.ADMIN_CONFIRM_ACTION = { type: 'delete', index: index, entry: entry };
-  document.getElementById('confirmAdminPassInput').value = '';
-  hide('errConfirmAdminPass');
-  document.getElementById('modalAdminPasswordConfirm').classList.add('open');
-  document.getElementById('confirmAdminPassInput').focus();
+  deleteEntryAction(index);
 }
 
 function closeAdminPasswordConfirmModal() {
